@@ -5,12 +5,19 @@ const lightboxImg = document.querySelector('#lightbox > img');
 
 listThumbnail.forEach((thumbnail) => {
     thumbnail.addEventListener('click', (evt) => {
+        lightbox.classList.add('entrer');
         lightboxImg.src = thumbnail.dataset.fullImg;
         lightbox.showModal();
     })
 });
 
 lightbox.addEventListener('click', () => {
-    lightbox.close();
+    lightbox.classList.add('sortie');
+    lightbox.addEventListener('animationend', () => {
+        lightbox.classList.remove('sortir');
+        lightbox.close();
+    }, { once: true });
 });
+
+
 
