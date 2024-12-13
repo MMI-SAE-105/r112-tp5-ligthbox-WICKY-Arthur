@@ -44,6 +44,15 @@
     animation-duration: 3s;
 }
 
+::backdrop[open] {
+    animation-name: entrer;
+    animation-duration: 3s;
+}
+::backdrop.sortie {
+    animation-name: sortir;
+    animation-duration: 3s;
+}
+
 @keyframes entrer {
     from {
         opacity: 0;
@@ -57,3 +66,4 @@
         transform: scale(0);
     }
 }
+

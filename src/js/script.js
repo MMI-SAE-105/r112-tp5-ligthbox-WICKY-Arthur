@@ -8,13 +8,14 @@ listThumbnail.forEach((thumbnail) => {
         lightbox.classList.add('entrer');
         lightboxImg.src = thumbnail.dataset.fullImg;
         lightbox.showModal();
+        
     })
 });
 
 lightbox.addEventListener('click', () => {
     lightbox.classList.add('sortie');
     lightbox.addEventListener('animationend', () => {
-        lightbox.classList.remove('sortir');
+        lightbox.classList.remove('sortie');
         lightbox.close();
     }, { once: true });
 });
